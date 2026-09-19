@@ -2,64 +2,62 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>THUMBLY PRO — K-POP Thumbnail Studio</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>THUMBLY — K-POP Thumbnail Design Studio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Black+Han+Sans&family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700;800&family=Do+Hyeon&family=Gowun+Dodum&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Jua&family=League+Spartan:wght@400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;500;600;700;800;900&family=Noto+Serif+KR:wght@400;500;600;700;800;900&family=Oswald:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto+Condensed:wght@300;400;500;700;900&family=Roboto:wght@300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Titillium+Web:wght@300;400;600;700;900&family=Ubuntu:wght@300;400;500;700&family=Archivo:wght@400;500;600;700;800;900&family=Nanum+Gothic:wght@400;700;800&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Black&family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Bebas+Neue&family=Black+Han+Sans&family=DM+Sans:wght@400;500;600;700;800&family=Do+Hyeon&family=Gowun+Dodum&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Jua&family=League+Spartan:wght@400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&family=Nanum+Gothic:wght@400;700;800&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;500;600;700;800;900&family=Noto+Serif+KR:wght@400;500;600;700;800;900&family=Oswald:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&family=Roboto+Condensed:wght@300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Titillium+Web:wght@300;400;600;700;900&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="app">
+<div class="app-shell">
 <header class="topbar">
-  <a class="brand" href="#"><span class="brand-mark">T</span><span>THUMBLY <b>PRO</b></span></a>
-  <div class="top-center"><span class="status-dot"></span> K-POP THUMBNAIL STUDIO <span class="slash">/</span> 16:9</div>
-  <nav><button class="nav active" data-page="editor">エディター</button><button class="nav" data-page="history">マイページ</button></nav>
+  <div class="brand"><span class="brand-dot"></span><strong>THUMBLY</strong><em>STUDIO</em></div>
+  <div class="doc-name" id="docName">Untitled thumbnail <button id="renameDoc">✎</button></div>
+  <div class="top-actions">
+    <button id="newProject" class="top-btn">新規</button><button id="saveProject" class="top-btn">保存</button>
+    <button id="undoBtn" class="top-icon" title="Undo">↶</button><button id="redoBtn" class="top-icon" title="Redo">↷</button>
+    <button id="projectsBtn" class="top-btn">マイプロジェクト</button><button id="exportBtn" class="top-primary">書き出す</button>
+  </div>
 </header>
-<main>
-<section id="editorPage" class="page active">
-  <div class="hero">
-    <div><div class="eyebrow">THUMBLY / CREATIVE STUDIO 03</div><h1>番組サムネを、<span>細部まで設計。</span></h1><p>写真・タイポグラフィ・ロゴ・フレーム・エフェクトをレイヤー感覚で編集。</p></div>
-    <div class="hero-actions"><button id="undo" class="icon-btn">↶</button><button id="redo" class="icon-btn">↷</button><button id="reset" class="soft-btn">リセット</button><button id="export" class="dark-btn">書き出す <span>↗</span></button></div>
-  </div>
-  <div class="studio">
-    <aside class="sidebar left">
-      <section><div class="sect"><span>01</span><h2>テンプレート</h2><small>10 styles</small></div><div id="templates" class="templates"></div></section>
-      <section><div class="sect"><span>02</span><h2>写真</h2></div><label id="drop" class="drop"><input id="photo" type="file" accept="image/*"><div class="drop-plus">＋</div><strong>写真をドロップ</strong><small>JPG / PNG / WEBP</small></label><div class="btn-row"><button id="fit" class="tool">全体表示</button><button id="fill" class="tool active">全面表示</button></div></section>
-      <section><div class="sect"><span>03</span><h2>表示</h2></div><div class="seg"><button data-bg="photo" class="active">写真編集</button><button data-bg="original">原稿確認</button></div><div class="view-row"><button id="gridBtn">グリッド</button><button id="safeBtn">セーフ</button></div></section>
-      <section><div class="sect"><span>04</span><h2>レイヤー</h2></div><div id="layers" class="layers"></div><div class="layer-actions"><button id="up">↑</button><button id="down">↓</button><button id="duplicate">複製</button><button id="deleteLayer">削除</button></div></section>
-    </aside>
+<div class="subbar">
+  <div class="crumb"><span>Design Studio</span><b>/</b><span id="templateLabel">MBC KPOP</span></div>
+  <div class="sub-actions"><button id="compareBtn">Before / After</button><button id="variantBtn">バリエーション</button><button id="referenceBtn">原稿を表示</button></div>
+</div>
+<main class="studio">
+  <aside class="panel left-panel">
+    <div class="panel-tabs"><button class="panel-tab active" data-left="templates">テンプレート</button><button class="panel-tab" data-left="elements">素材</button><button class="panel-tab" data-left="uploads">写真</button></div>
+    <div id="leftContent"></div>
+  </aside>
 
-    <section class="work">
-      <div class="workbar"><div><i></i><strong id="templateName">MBC KPOP</strong><small id="saveState">自動保存</small></div><div class="worktools"><button id="zoomOut">−</button><span id="zoom">100%</span><button id="zoomIn">＋</button></div></div>
-      <div class="stage"><div id="canvasWrap"><canvas id="canvas" width="720" height="404"></canvas></div><div class="stage-note">クリックで選択 / 空白クリックで解除　・　ドラッグで移動　・　Shift＝軸固定</div></div>
-      <div class="underbar"><span>720 × 404 / 16:9</span><span>Ctrl/Cmd + Z 取り消し　·　Ctrl/Cmd + S 保存</span></div>
-    </section>
+  <section class="canvas-area">
+    <div class="canvas-toolbar">
+      <div class="mode-pills"><button class="active" data-mode="edit">EDIT</button><button data-mode="reference">REFERENCE</button></div>
+      <div class="canvas-tools"><button id="gridBtn">▦</button><button id="safeBtn">◇</button><button id="zoomOut">−</button><span id="zoomLabel">100%</span><button id="zoomIn">＋</button></div>
+    </div>
+    <div class="canvas-scroll"><div id="canvasFrame"><canvas id="canvas" width="720" height="404"></canvas><div id="compareOverlay" class="compare-overlay">ORIGINAL</div></div></div>
+    <div class="canvas-status"><span>720 × 404 · 16:9</span><span id="statusText">準備完了</span><span>Shift＝軸固定 · 矢印＝1px</span></div>
+  </section>
 
-    <aside class="sidebar right">
-      <section><div class="sect"><span>05</span><h2>文字</h2><small id="selectedLabel">未選択</small></div><div class="fields"><label>番組名<input id="show" maxlength="40"></label><label>グループ名<input id="group" maxlength="40"></label><label>メインタイトル<input id="title" maxlength="50"></label><label>サブタイトル<input id="sub" maxlength="60"></label></div></section>
-      <section><div class="sect"><span>06</span><h2>タイポグラフィ</h2></div>
-        <label class="wide-label">フォント<select id="font"></select></label>
-        <div class="font-preview" id="fontPreview">Hearts2Hearts 15-LOVE</div>
-        <div class="control-grid"><label>サイズ<input id="fontSize" type="range" min="6" max="130" value="48"><output id="fontSizeOut">48</output></label><label>太さ<select id="weight"><option>300</option><option>400</option><option>500</option><option>600</option><option selected>700</option><option>800</option><option>900</option></select></label><label>字間<input id="tracking" type="range" min="-5" max="20" step=".5" value="0"><output id="trackingOut">0</output></label><label>行間<input id="lineHeight" type="range" min=".7" max="1.8" step=".05" value="1"><output id="lineHeightOut">1.00</output></label></div>
-        <div class="style-row"><button id="shadow" class="chip active">影</button><button id="stroke" class="chip">縁取り</button><button id="glow" class="chip">発光</button><button id="box" class="chip">背景</button></div>
-        <div class="color-grid"><label>文字<input id="textColor" type="color" value="#ffffff"></label><label>縁<input id="strokeColor" type="color" value="#000000"></label><label>背景<input id="boxColor" type="color" value="#000000"></label><label>テーマ<input id="theme" type="color" value="#6e73ff"></label></div>
-      </section>
-      <section><div class="sect"><span>07</span><h2>エフェクト</h2></div>
-        <div class="effect-grid"><label>回転<input id="rotation" type="range" min="-15" max="15" step=".5" value="0"><output id="rotationOut">0°</output></label><label>不透明度<input id="opacity" type="range" min="0" max="100" value="100"><output id="opacityOut">100%</output></label><label>横伸縮<input id="scaleX" type="range" min=".5" max="2" step=".01" value="1"><output id="scaleXOut">1.00</output></label><label>縦伸縮<input id="scaleY" type="range" min=".5" max="2" step=".01" value="1"><output id="scaleYOut">1.00</output></label></div>
-      </section>
-      <section><div class="sect"><span>08</span><h2>写真調整</h2></div><div class="effect-grid"><label>明るさ<input id="brightness" type="range" min="50" max="150" value="100"><output id="brightnessOut">100%</output></label><label>コントラスト<input id="contrast" type="range" min="50" max="160" value="100"><output id="contrastOut">100%</output></label><label>彩度<input id="saturation" type="range" min="0" max="180" value="100"><output id="saturationOut">100%</output></label><label>ぼかし<input id="blur" type="range" min="0" max="8" step=".5" value="0"><output id="blurOut">0</output></label></div></section>
-      <section><div class="sect"><span>09</span><h2>デザイン</h2></div>
-        <div class="design-tabs"><button class="active" data-design="color">カラー</button><button data-design="shape">図形</button><button data-design="line">ライン</button></div>
-        <div id="designPanel" class="design-panel"></div>
-      </section>
-      <section><div class="sect"><span>10</span><h2>出力</h2></div><button id="exportOpen" class="export-wide">画質・拡張子を選んで書き出す <span>→</span></button></section>
-    </aside>
-  </div>
-</section>
-<section id="historyPage" class="page"><div class="history-head"><div><div class="eyebrow">MY PAGE</div><h1>作成履歴</h1><p>書き出したサムネイルをブラウザ内に保存。</p></div><button id="clearHistory" class="soft-btn danger">すべて削除</button></div><div id="history" class="history-grid"></div><div id="empty" class="empty"><div>◇</div><h2>まだ作品がありません</h2><p>エディターで書き出すとここに保存されます。</p></div></section>
+  <aside class="panel right-panel">
+    <div class="right-head"><div><small>LAYERS</small><strong>レイヤー</strong></div><div class="layer-head-actions"><button id="addText" title="テキスト">T</button><button id="addGroup" title="グループ">＋▣</button></div></div>
+    <div id="layersPanel" class="layers-panel"></div>
+    <div class="layer-actions"><button id="layerUp">↑</button><button id="layerDown">↓</button><button id="layerDuplicate">複製</button><button id="layerDelete">削除</button></div>
+    <div class="properties">
+      <div class="prop-head"><span>PROPERTIES</span><b id="selectedName">未選択</b></div>
+      <div id="propertiesBody"></div>
+    </div>
+  </aside>
 </main>
-<div id="exportModal" class="modal"><div class="modal-card"><button class="modal-close" id="exportClose">×</button><div class="eyebrow">EXPORT</div><h2>書き出し設定</h2><p>用途に合わせてサイズと形式を選択してください。</p><div class="export-options"><label>形式<select id="exportType"><option value="png">PNG</option><option value="jpg">JPG</option><option value="webp">WEBP</option></select></label><label>倍率<select id="exportScale"><option value="1">1× — 720×404</option><option value="2" selected>2× — 1440×808</option><option value="3">3× — 2160×1212</option><option value="4">4× — 2880×1616</option><option value="6">6× — 4320×2424</option></select></label><label>品質<input id="exportQuality" type="range" min="60" max="100" value="95"><output id="qualityOut">95%</output></label></div><div class="modal-actions"><button class="soft-btn" id="exportCancel">キャンセル</button><button class="dark-btn" id="exportDo">ダウンロード</button></div></div></div>
+
 <div id="toast" class="toast"></div>
+
+<div id="exportModal" class="modal"><div class="modal-card export-card"><button class="modal-x" data-close="exportModal">×</button><div class="eyebrow">EXPORT</div><h2>書き出し</h2><p>用途に合わせて解像度と形式を選択。</p><div class="export-grid"><label>形式<select id="exportType"><option value="png">PNG</option><option value="jpg">JPG</option><option value="webp">WEBP</option></select></label><label>解像度<select id="exportScale"><option value="1">1× · 720×404</option><option value="2">2× · 1440×808</option><option value="3" selected>3× · 2160×1212</option><option value="4">4× · 2880×1616</option><option value="6">6× · 4320×2424</option></select></label><label class="full">品質 <output id="qualityOut">95%</output><input id="exportQuality" type="range" min="60" max="100" value="95"></label></div><div class="modal-actions"><button class="ghost" data-close="exportModal">キャンセル</button><button class="primary" id="doExport">ダウンロード</button></div></div></div>
+
+<div id="historyModal" class="modal"><div class="modal-card wide-card"><button class="modal-x" data-close="historyModal">×</button><div class="eyebrow">MY PROJECTS</div><h2>マイプロジェクト</h2><p>ブラウザ内に保存した作品・プロジェクト。</p><div id="projectGrid" class="project-grid"></div></div></div>
+
+<div id="variantModal" class="modal"><div class="modal-card wide-card"><button class="modal-x" data-close="variantModal">×</button><div class="eyebrow">VARIATIONS</div><h2>バリエーション</h2><p>同じ写真・文字から複数のデザイン案を作成。</p><div id="variantGrid" class="variant-grid"></div></div></div>
+
 <script src="js/app.js"></script>
-</body></html>
+</body>
+</html>
