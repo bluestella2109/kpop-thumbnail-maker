@@ -14,25 +14,25 @@
 <header class="topbar">
   <div class="brand"><span class="brand-dot"></span><strong>THUMBLY</strong><em>STUDIO</em></div>
   <div class="doc-name" id="docName">Untitled thumbnail <button id="renameDoc">✎</button></div>
-  <div class="top-actions">
-    <button id="newProject" class="top-btn">新規</button><button id="saveProject" class="top-btn">保存</button>
+  <div class="top-actions"><select id="languageSelect" class="lang-select" aria-label="言語"><option value="ja">日本語</option><option value="en">English</option><option value="ko">한국어</option></select>
+    <button id="newProject" class="top-btn" data-i18n="new">新規</button><button id="saveProject" class="top-btn" data-i18n="save">保存</button>
     <button id="undoBtn" class="top-icon" title="Undo">↶</button><button id="redoBtn" class="top-icon" title="Redo">↷</button>
-    <button id="projectsBtn" class="top-btn">マイプロジェクト</button><button id="exportBtn" class="top-primary">書き出す</button>
+    <button id="projectsBtn" class="top-btn" data-i18n="projects">マイプロジェクト</button><button id="exportBtn" class="top-primary" data-i18n="export">書き出す</button>
   </div>
 </header>
 <div class="subbar">
-  <div class="crumb"><span>Design Studio</span><b>/</b><span id="templateLabel">MBC KPOP</span></div>
-  <div class="sub-actions"><button id="compareBtn">Before / After</button><button id="variantBtn">バリエーション</button><button id="referenceBtn">原稿を表示</button></div>
+  <div class="crumb"><span data-i18n="designStudio">デザインスタジオ</span><b>/</b><span id="templateLabel">MBC KPOP</span></div>
+  <div class="sub-actions"><button id="compareBtn" data-i18n="beforeAfter">比較</button><button id="variantBtn" data-i18n="variants">バリエーション</button><button id="referenceBtn" data-i18n="referenceView">原稿を表示</button></div>
 </div>
 <main class="studio">
   <aside class="panel left-panel">
-    <div class="panel-tabs"><button class="panel-tab active" data-left="templates">テンプレート</button><button class="panel-tab" data-left="elements">素材</button><button class="panel-tab" data-left="uploads">写真</button></div>
+    <div class="panel-tabs"><button class="panel-tab active" data-left="templates" data-i18n="template">テンプレート</button><button class="panel-tab" data-left="elements" data-i18n="elements">素材</button><button class="panel-tab" data-left="uploads" data-i18n="photo">写真</button></div>
     <div id="leftContent"></div>
   </aside>
 
   <section class="canvas-area">
     <div class="canvas-toolbar">
-      <div class="mode-pills"><button class="active" data-mode="edit">EDIT</button><button data-mode="reference">REFERENCE</button></div>
+      <div class="mode-pills"><button class="active" data-mode="edit" data-i18n="edit">編集</button><button data-mode="reference" data-i18n="reference">原稿</button></div>
       <div class="canvas-tools"><button id="gridBtn">▦</button><button id="safeBtn">◇</button><button id="zoomOut">−</button><span id="zoomLabel">100%</span><button id="zoomIn">＋</button></div>
     </div>
     <div class="canvas-scroll"><div id="canvasFrame"><canvas id="canvas" width="720" height="404"></canvas><div id="compareOverlay" class="compare-overlay">ORIGINAL</div></div></div>
@@ -40,11 +40,11 @@
   </section>
 
   <aside class="panel right-panel">
-    <div class="right-head"><div><small>LAYERS</small><strong>レイヤー</strong></div><div class="layer-head-actions"><button id="addText" title="テキスト">T</button><button id="addGroup" title="グループ">＋▣</button></div></div>
+    <div class="right-head"><div><small data-i18n="layers">レイヤー</small><strong data-i18n="layerPanel">レイヤーパネル</strong></div><div class="layer-head-actions"><button id="addText" title="テキスト">T</button><button id="addGroup" title="グループ">＋▣</button></div></div>
     <div id="layersPanel" class="layers-panel"></div>
     <div class="layer-actions"><button id="layerUp">↑</button><button id="layerDown">↓</button><button id="layerDuplicate">複製</button><button id="layerDelete">削除</button></div>
     <div class="properties">
-      <div class="prop-head"><span>PROPERTIES</span><b id="selectedName">未選択</b></div>
+      <div class="prop-head"><span data-i18n="properties">プロパティ</span><b id="selectedName">未選択</b></div>
       <div id="propertiesBody"></div>
     </div>
   </aside>
